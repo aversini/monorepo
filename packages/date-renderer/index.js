@@ -4,5 +4,5 @@
 const getDate = require("@versini/date-logic");
 
 (() => {
-  console.log(`====> Date: ${getDate()}`);
+  console.log(`====> Date: [ ${getDate()} ]`);
 })();
