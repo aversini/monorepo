@@ -39,6 +39,6 @@ jobs:
           fi
 
       - name: Publish Packages
-        run: npx lerna publish from-git --no-private --yes --loglevel debug
+        run: npx lerna publish from-package --no-push --no-private --yes --loglevel debug
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
