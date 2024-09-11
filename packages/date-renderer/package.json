@@ -1,6 +1,6 @@
 {
   "name": "@versini/date-renderer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publishConfig": {
     "access": "public"
   },
@@ -12,6 +12,6 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "@versini/date-logic": "^1.0.0"
+    "@versini/date-logic": "^2.0.0"
   }
 }
