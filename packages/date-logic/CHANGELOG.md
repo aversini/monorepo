@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/aversini/monorepo/compare/@versini/date-logic@4.0.0...@versini/date-logic@4.1.0) (2024-09-11)
+
+
+### Features
+
+* **date-logic:** default month is now short ([dde56bf](https://github.com/aversini/monorepo/commit/dde56bf737a9ea3be2fab972b053ca893e8118a8))
+
+
+
+
+
 # 4.0.0 (2024-09-11)
 
 
