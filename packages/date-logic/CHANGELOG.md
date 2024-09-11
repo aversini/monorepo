@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.1](https://github.com/aversini/monorepo/compare/@versini/date-logic@4.2.0...@versini/date-logic@4.2.1) (2024-09-11)
+
+
+### Bug Fixes
+
+* **date-logic:** short month is confusing ([d25d288](https://github.com/aversini/monorepo/commit/d25d28851fdf55b420a75ff3548e8831ff7c227c))
+* **date-logic:** short weekday is confusing ([5133eef](https://github.com/aversini/monorepo/commit/5133eef129653044c7c994c0c51a298cb02aa05f))
+
+
+
+
+
 # [4.2.0](https://github.com/aversini/monorepo/compare/@versini/date-logic@4.1.0...@versini/date-logic@4.2.0) (2024-09-11)
 
 
