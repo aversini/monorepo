@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/aversini/monorepo/compare/@versini/date-renderer@1.3.0...@versini/date-renderer@1.4.0) (2024-09-11)
+
+
+### Bug Fixes
+
+* **date-renderer:** better prefix log ([42b8252](https://github.com/aversini/monorepo/commit/42b82521500cb2c8db02c1fa5e6e122197238dd1))
+
+
+### Features
+
+* **data-rendered:** adding prefix to log ([d679564](https://github.com/aversini/monorepo/commit/d67956496c0399aff481278fe96ef73801e37afc))
+
+
+
+
+
 # 1.3.0 (2024-09-11)
 
 
