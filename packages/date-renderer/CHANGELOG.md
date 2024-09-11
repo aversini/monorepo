@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/aversini/monorepo/compare/@versini/date-renderer@1.5.0...@versini/date-renderer@1.6.0) (2024-09-11)
+
+
+### Features
+
+* **date-renderer:** adding header to logs ([3b481dc](https://github.com/aversini/monorepo/commit/3b481dcbf984b5b9f7e25eef0bf7c214b960dc96))
+
+
+
+
+
 # [1.5.0](https://github.com/aversini/monorepo/compare/@versini/date-renderer@1.4.0...@versini/date-renderer@1.5.0) (2024-09-11)
 
 
