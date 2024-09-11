@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/aversini/monorepo/compare/@versini/date-logic@4.1.0...@versini/date-logic@4.2.0) (2024-09-11)
+
+
+### Features
+
+* **date-logic:** default weekday is now short ([6c1f124](https://github.com/aversini/monorepo/commit/6c1f1241ad99834348508952fbba72886b99ed5d))
+
+
+
+
+
 # [4.1.0](https://github.com/aversini/monorepo/compare/@versini/date-logic@4.0.0...@versini/date-logic@4.1.0) (2024-09-11)
 
 
