@@ -6,7 +6,7 @@ module.exports = function getDate(
   options = {
     weekday: "long",
     year: "numeric",
-    month: "short",
+    month: "long",
     day: "numeric"
   }
 ) {
