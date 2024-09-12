@@ -1,4 +1,30 @@
-name: Publish
+#
+# This action runs everytime a PR tagged with the label "release" is merged
+# into the "main" or "develop" branches.
+#
+# It automatically bumps packages version if needed:
+# - stable version if merged into main branch
+# - prerelease if merged into develop branch
+# It then creates tags, creates GitHub releases and publishes the packages that did change.
+#
+# Example
+#
+# packages/libA depends on packages/libB
+# libA package.json should have its prod dependencies as:
+# "dependencies": {
+#   "libB": "workspace:../libB" <- using pnpm workspace concept
+# }
+#
+# Scenario #1
+# libA does not change, but libB does, then both versions will
+# be updated and both packages will be published.
+#
+# Scenario #2
+# libA does change, and libB does not, then only libA version will
+# be updated and only libA package will be published.
+#
+
+name: Bump and Publish
 
 on:
   pull_request:
@@ -27,9 +53,23 @@ jobs:
           node-version: 20.x
           registry-url: "https://registry.npmjs.org"
 
-      - name: Publish to NPM
+      - name: Version Bump
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          corepack enable
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor}}@users.noreply.github.com"
+
+          if [ ${{ github.base_ref }} = development ]; then
+            npx lerna version --exact --conventional-commits --conventional-prerelease --preid beta --yes
+          else
+            npx lerna version --exact --conventional-commits --conventional-graduate --create-release github --yes
+          fi
+
+      - name: Publish Packages
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
         run: |
           corepack enable
-          npx lerna publish from-package --no-private --conventional-commits --create-release github --yes --loglevel debug
+          npx lerna publish from-package --no-push --no-private --yes --loglevel debug
