@@ -14,11 +14,11 @@
 #   "libB": "workspace:../libB" <- using pnpm workspace concept
 # }
 #
-# Secenario #1
+# Scenario #1
 # libA does not change, but libB does, then both versions will
 # be updated and both packages will be published.
 #
-# Secenario #2
+# Scenario #2
 # libA does change, and libB does not, then only libA version will
 # be updated and only libA package will be published.
 #
