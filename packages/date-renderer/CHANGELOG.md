@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.4](https://github.com/aversini/monorepo/compare/@versini/date-renderer@1.6.3...@versini/date-renderer@1.6.4) (2024-09-12)
+
+**Note:** Version bump only for package @versini/date-renderer
+
+
+
+
+
 ## [1.6.3](https://github.com/aversini/monorepo/compare/@versini/date-renderer@1.6.2...@versini/date-renderer@1.6.3) (2024-09-11)
 
 **Note:** Version bump only for package @versini/date-renderer
