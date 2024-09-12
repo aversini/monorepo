@@ -4,7 +4,7 @@
   "npmClient": "pnpm",
   "command": {
     "version": {
-      "message": "chore(release): publish"
+      "message": "chore: main release"
     }
   },
   "ignoreChanges": [
