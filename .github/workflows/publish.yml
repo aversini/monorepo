@@ -1,0 +1,17 @@
+name: Publish
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+      - development
+
+jobs:
+  print_title_of_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Title of Merged PR
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: echo The Title of your PR is $TITLE
