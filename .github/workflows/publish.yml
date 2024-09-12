@@ -8,10 +8,28 @@ on:
       - development
 
 jobs:
-  print_title_of_pr:
+  publish:
+    if: ${{ github.event.label.name == 'release' && github.event.pull_request.merged == true }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
     steps:
-      - name: Print Title of Merged PR
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Publish to NPM
         env:
-          TITLE: ${{ github.event.pull_request.title }}
-        run: echo The Title of your PR is $TITLE
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+        run: |
+          corepack enable
+          npx lerna publish from-package --no-private --create-release github --yes --loglevel debug
