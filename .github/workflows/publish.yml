@@ -32,4 +32,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
         run: |
           corepack enable
-          npx lerna publish from-package --no-private --create-release github --yes --loglevel debug
+          npx lerna publish from-package --no-private --conventional-commits --create-release github --yes --loglevel debug
