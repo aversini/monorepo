@@ -1,14 +1,40 @@
-name: Publish
+#
+# This action runs everytime a PR is merged into the "main" or "develop" branches.
+#
+# It automatically bumps packages version if needed.
+# - stable version if main branch
+# - prerelease if develop branch
+# It then creates tags, creates GitHub releases and publishes the packages that did change.
+#
+# Example
+#
+# packages/libA depends on packages/libB
+# libA package.json should have its prod dependencies as:
+# "dependencies": {
+#   "libB": "workspace:../libB" <- using pnpm workspace concept
+# }
+#
+# Secenario #1
+# libA does not change, but libB does, then both versions will
+# be updated and both packages will be published.
+#
+# Secenario #2
+# libA does change, and libB does not, then only libA version will
+# be updated and only libA package will be published.
+#
+
+name: Bump and Publish
 
 on:
   pull_request:
     types: [closed]
     branches:
       - main
+      - development
 
 jobs:
   publish:
-    if: github.event.pull_request.merged == true # Condition
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     permissions:
       contents: write
