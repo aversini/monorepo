@@ -35,7 +35,8 @@ on:
 
 jobs:
   publish:
-    if: contains(github.event.pull_request.labels.*.name, 'release') && github.event.pull_request.merged == true
+    if: false # temporarily disabled <<<<<=======================
+    # if: contains(github.event.pull_request.labels.*.name, 'release') && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     permissions:
       contents: write
