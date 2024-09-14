@@ -19,6 +19,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+## [5.0.1](https://github.com/aversini/monorepo/compare/date-logic-v5.0.0...date-logic-v5.0.1) (2024-09-14)
+
+
+### Bug Fixes
+
+* **date-logic:** no english is better ([b771de1](https://github.com/aversini/monorepo/commit/b771de1a6944f18d379531723327abcfa6498010))
+
 ## [5.0.0](https://github.com/aversini/monorepo/compare/date-logic-v4.3.0...date-logic-v5.0.0) (2024-09-14)
 
 
