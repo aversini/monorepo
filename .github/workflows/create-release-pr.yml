@@ -23,6 +23,7 @@ jobs:
           echo "not release: ${{ contains(github.event.pull_request.labels.*.name, 'release') != true }}"
           echo "labels: ${{ toJson(github.event.pull_request.labels) }}"
           echo "merged and not release: ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release') != true}}"
+          echo "manual_call or merged and not release: ${{ github.event.inputs.manual_call == true || (github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release') != true) }}"
 
   create-release-pr:
     # if: github.event.pull_request.merged == true || github.event.inputs.manual_call == true
