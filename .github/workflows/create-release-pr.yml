@@ -28,7 +28,7 @@ jobs:
           echo "false: ${{ false }}"
           echo "true and false: ${{ true && false }}"
           echo "true or false: ${{ true || false }}"
-          echo "true or (false and false): ${{ true || (false && false) }}"
+          echo "true or (false and true): ${{ true || (false && true) }}"
         shell: bash
 
   create-release-pr:
