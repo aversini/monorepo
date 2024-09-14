@@ -2,6 +2,12 @@ name: Create Release Pull Request
 
 on:
   workflow_dispatch:
+    inputs:
+      manual_call:
+        description: "To distinguish manual calls from automatic ones"
+        type: boolean
+        required: false
+        default: true
   pull_request:
     types: [closed]
     branches:
@@ -9,6 +15,7 @@ on:
 
 jobs:
   create-release-pr:
+    if: github.event.pull_request.merged == true || github.event.inputs.manual_call == true
     runs-on: ubuntu-latest
     permissions:
       contents: write
