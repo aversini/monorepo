@@ -1,42 +1,15 @@
-#
-# This action runs everytime a PR tagged with the label "release" is merged
-# into the "main" or "develop" branches.
-#
-# It automatically bumps packages version if needed:
-# - stable version if merged into main branch
-# - prerelease if merged into develop branch
-# It then creates tags, creates GitHub releases and publishes the packages that did change.
-#
-# Example
-#
-# packages/libA depends on packages/libB
-# libA package.json should have its prod dependencies as:
-# "dependencies": {
-#   "libB": "workspace:../libB" <- using pnpm workspace concept
-# }
-#
-# Scenario #1
-# libA does not change, but libB does, then both versions will
-# be updated and both packages will be published.
-#
-# Scenario #2
-# libA does change, and libB does not, then only libA version will
-# be updated and only libA package will be published.
-#
-
-name: Bump and Publish
+name: Publish
 
 on:
   pull_request:
     types: [closed]
     branches:
       - main
-      - development
 
 jobs:
   publish:
-    if: false # temporarily disabled <<<<<=======================
-    # if: contains(github.event.pull_request.labels.*.name, 'release') && github.event.pull_request.merged == true
+    if: ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release') == true }}
+
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -46,6 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          # Fetch all history for all branches and tags, required for Lerna (default is 1)
           fetch-depth: 0
 
       - name: Setup Node
@@ -54,23 +28,9 @@ jobs:
           node-version: 20.x
           registry-url: "https://registry.npmjs.org"
 
-      - name: Version Bump
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          corepack enable
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor}}@users.noreply.github.com"
-
-          if [ ${{ github.base_ref }} = development ]; then
-            npx lerna version --exact --conventional-commits --conventional-prerelease --preid beta --yes
-          else
-            npx lerna version --exact --conventional-commits --conventional-graduate --create-release github --yes
-          fi
-
       - name: Publish Packages
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
         run: |
           corepack enable
-          npx lerna publish from-package --no-push --no-private --yes --loglevel debug
+          npx lerna publish from-package --no-private --create-release github --yes --loglevel debug
