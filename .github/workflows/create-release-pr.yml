@@ -14,6 +14,16 @@ on:
       - main
 
 jobs:
+  debugInputs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "manual_call: ${{ github.event.inputs.manual_call }}"
+          echo "merged: ${{ github.event.pull_request.merged }}"
+          echo "not release: ${{ !contains(github.event.pull_request.labels.*.name, 'release') }}"
+          echo "labels: ${{ toJson(github.event.pull_request.labels) }}"
+          echo "merged and not release: ${{ github.event.pull_request.merged && !contains(github.event.pull_request.labels.*.name, 'release') }}"
+
   create-release-pr:
     # if: github.event.pull_request.merged == true || github.event.inputs.manual_call == true
     if: |
