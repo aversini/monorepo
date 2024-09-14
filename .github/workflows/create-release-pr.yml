@@ -16,7 +16,9 @@ on:
 jobs:
   create-release-pr:
     # if: github.event.pull_request.merged == true || github.event.inputs.manual_call == true
-    if: ${{ inputs.manual_call }} && $${{ ! contains(github.event.pull_request.labels.*.name, 'release') }}
+    if: |
+      (github.event.pull_request.merged == true && $${{ ! contains(github.event.pull_request.labels.*.name, 'release') }}) ||
+      inputs.manual_call == true ||
     runs-on: ubuntu-latest
     permissions:
       contents: write
