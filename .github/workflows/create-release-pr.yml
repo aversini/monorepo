@@ -8,15 +8,15 @@ on:
         type: boolean
         required: false
         default: true
-  pull_request:
-    types: [closed]
-    branches:
-      - main
+  # pull_request:
+  #   types: [closed]
+  #   branches:
+  #     - main
 
 jobs:
   create-release-pr:
     # if: github.event.pull_request.merged == true || github.event.inputs.manual_call == true
-    if: ${{ inputs.manual_call }} || github.event.pull_request.merged == true
+    if: ${{ inputs.manual_call }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
