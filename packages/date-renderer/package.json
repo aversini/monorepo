@@ -12,6 +12,6 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "@versini/date-logic": "workspace:../date-logic"
+    "@versini/date-logic": "workspace:*"
   }
 }

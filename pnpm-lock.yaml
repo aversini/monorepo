@@ -17,7 +17,7 @@ importers:
   packages/date-renderer:
     dependencies:
       '@versini/date-logic':
-        specifier: workspace:../date-logic
+        specifier: workspace:*
         version: link:../date-logic
 
 packages:
