@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/aversini/monorepo/compare/@versini/date-renderer@1.6.9...@versini/date-renderer@1.7.0) (2024-09-14)
+
+
+### Features
+
+* **date-rendered:** adding footer ([c111b50](https://github.com/aversini/monorepo/commit/c111b5059e0b49282028c9d96ecc043a5a4efe49))
+
+
+
+
+
 ## [1.6.9](https://github.com/aversini/monorepo/compare/@versini/date-renderer@1.6.3...@versini/date-renderer@1.6.9) (2024-09-12)
 
 **Note:** Version bump only for package @versini/date-renderer
