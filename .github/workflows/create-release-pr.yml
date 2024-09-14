@@ -15,7 +15,6 @@ on:
 
 jobs:
   debugInputs:
-    if: false # temporarily disabled <<<<<=======================
     runs-on: ubuntu-latest
     steps:
       - run: |
