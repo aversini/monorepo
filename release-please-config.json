@@ -2,5 +2,6 @@
   "packages": {
     "packages/date-logic": {},
     "packages/date-renderer": {}
-  }
+  },
+  "plugins": ["node-workspace"]
 }
