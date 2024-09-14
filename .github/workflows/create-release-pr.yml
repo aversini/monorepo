@@ -38,10 +38,11 @@ jobs:
         shell: bash
 
   create-release-pr:
+    if: false # temporarily disabled <<<<<=======================
     # if: github.event.pull_request.merged == true || github.event.inputs.manual_call == true
-    if: |
-      (github.event.pull_request.merged == true && $${{ ! contains(github.event.pull_request.labels.*.name, 'release') }}) ||
-      inputs.manual_call == true
+    # if: |
+    #   (github.event.pull_request.merged == true && $${{ ! contains(github.event.pull_request.labels.*.name, 'release') }}) ||
+    #   inputs.manual_call == true
     runs-on: ubuntu-latest
     permissions:
       contents: write
