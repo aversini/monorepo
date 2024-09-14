@@ -14,6 +14,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+## [1.8.1](https://github.com/aversini/monorepo/compare/date-renderer-v1.8.0...date-renderer-v1.8.1) (2024-09-14)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @versini/date-logic bumped to 5.0.2
+
 ## [1.8.0](https://github.com/aversini/monorepo/compare/date-renderer-v1.7.0...date-renderer-v1.8.0) (2024-09-14)
 
 
