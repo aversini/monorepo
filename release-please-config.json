@@ -4,5 +4,5 @@
     "packages/date-renderer": {}
   },
   "plugins": ["node-workspace"],
-  "pull-request-header": ":rocket: Automated Release PR"
+  "pull-request-header": ":rocket: Automated Release"
 }
