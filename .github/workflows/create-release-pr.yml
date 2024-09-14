@@ -8,10 +8,10 @@ on:
         type: boolean
         required: false
         default: true
-  # pull_request:
-  #   types: [closed]
-  #   branches:
-  #     - main
+  pull_request:
+    types: [closed]
+    branches:
+      - main
 
 jobs:
   create-release-pr:
