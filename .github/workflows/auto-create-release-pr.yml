@@ -8,7 +8,8 @@ on:
 
 jobs:
   create-release-pr:
-    if: ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release') != true }}
+    if: false # temporarily disabled <<<<<=======================
+    # if: ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release') != true }}
 
     runs-on: ubuntu-latest
     permissions:
