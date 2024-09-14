@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.8](https://github.com/aversini/monorepo/compare/@versini/date-logic@4.2.7...@versini/date-logic@4.2.8) (2024-09-14)
+
+
+### Bug Fixes
+
+* **date-logic:** month should be short ([97a3f4d](https://github.com/aversini/monorepo/commit/97a3f4d42a841361af09a33de22ea53a9b156a62))
+
+
+
+
+
 ## [4.2.7](https://github.com/aversini/monorepo/compare/@versini/date-logic@4.2.1...@versini/date-logic@4.2.7) (2024-09-12)
 
 
