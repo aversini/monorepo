@@ -51,8 +51,11 @@ jobs:
         with:
           token: ${{ secrets.PR_WRITE }}
           delete-branch: true
+          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
+
           title: "chore: release main"
           body-path: |
             tmp/version-bump.md
           labels: |
-            autorelease
+            release
