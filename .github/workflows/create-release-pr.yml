@@ -18,12 +18,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "manual_call: ${{ github.event.inputs.manual_call }}"
-          echo "merged: ${{ github.event.pull_request.merged == true }}"
-          echo "not release: ${{ contains(github.event.pull_request.labels.*.name, 'release') != true }}"
           echo "labels: ${{ toJson(github.event.pull_request.labels) }}"
+
+          echo "manual_call: ${{ github.event.inputs.manual_call }}"
+
+          echo "merged: ${{ github.event.pull_request.merged == true }}"
+
+          echo "not release: ${{ contains(github.event.pull_request.labels.*.name, 'release') != true }}"
+
           echo "merged and not release: ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release') != true}}"
+
           echo "manual_call or (merged and not release): ${{ (github.event.inputs.manual_call == true) || (github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release') != true) }}"
+
           echo "true: ${{ true }}"
           echo "false: ${{ false }}"
           echo "true and false: ${{ true && false }}"
