@@ -2,7 +2,7 @@
  * Date Logic
  */
 module.exports = function getDate(
-  locale = "fr-FR",
+  locale = "en-US",
   options = {
     weekday: "long",
     year: "numeric",
