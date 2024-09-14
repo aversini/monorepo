@@ -1,0 +1,7 @@
+{
+  "packages": {
+    "packages/date-logic": {},
+    "packages/date-rendered": {}
+  },
+  "plugins": ["node-workspace"]
+}
